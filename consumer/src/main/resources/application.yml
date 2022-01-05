@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8000
 rpc:
   client:
     remote-api-packages: "com.xmg.remoteApi."
@@ -8,6 +8,7 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.0.10:8848
+        enabled: false
   application:
     name: consumer
 logging:

@@ -19,6 +19,7 @@ public class PermissionService {
     }
 
     public Permission permission(String username) {
+        int i = 100 / 0;
         return permissionMap.get(username);
     }
 
