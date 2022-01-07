@@ -17,7 +17,7 @@ public class TestController {
     @RequestMapping("/test0")
     public void test0() {
         final User laoWang = userRemoteApi.userInfo("laoWang");
-        System.out.println(laoWang.toString());
+        System.out.println(laoWang.hashCode());
     }
 
     @RequestMapping("/test1")

@@ -36,6 +36,7 @@ public class UserService {
     public User userInfo(String username) {
         final User user = userMap.get(username);
         final Permission permission = permissionApi.permission(username);
+        final Permission permission2 = permissionApi.permission("laoZhang");
         user.setPermission(permission);
         return user;
     }
