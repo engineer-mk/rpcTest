@@ -3,6 +3,7 @@ server:
 rpc:
   server:
     port: 7001
+    token: fightTigersTonight
   client:
     remote-api-packages: "com.xmg.remoteApi."
 spring:

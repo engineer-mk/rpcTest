@@ -18,7 +18,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class UserService {
     private static final Map<String, User> userMap = new HashMap<>();
-    private final PermissionApi permissionApi;
+//    private final PermissionApi permissionApi;
 
     static {
         List<Role> roleList = new ArrayList<>();
@@ -35,9 +35,9 @@ public class UserService {
 
     public User userInfo(String username) {
         final User user = userMap.get(username);
-        final Permission permission = permissionApi.permission(username);
-        final Permission permission2 = permissionApi.permission("laoZhang");
-        user.setPermission(permission);
+//        final Permission permission = permissionApi.permission(username);
+//        final Permission permission2 = permissionApi.permission("laoZhang");
+//        user.setPermission(permission);
         return user;
     }
 

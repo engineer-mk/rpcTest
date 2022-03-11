@@ -3,6 +3,7 @@ server:
 rpc:
   client:
     remote-api-packages: "com.xmg.remoteApi."
+    token: fightTigersTonight
 spring:
   cloud:
     nacos:
