@@ -11,12 +11,12 @@ import java.util.Objects;
  * @author makui
  * @created 2022/4/2
  **/
-@Entity
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Order {
+@Entity
+public class ProductOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,8 +41,8 @@ public class Order {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        final Order order = (Order) o;
-        return id != null && Objects.equals(id, order.id);
+        final ProductOrder productOrder = (ProductOrder) o;
+        return id != null && Objects.equals(id, productOrder.id);
     }
 
     @Override

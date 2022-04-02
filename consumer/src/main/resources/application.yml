@@ -12,11 +12,6 @@ spring:
         enabled: false
   application:
     name: consumer
-logging:
-  level:
-    root: info
-    xmg.client.handler.ClientHandler: debug
-    xmg.client.handler.RpcFuture: debug
   jpa:
     show-sql: false
     properties:
@@ -34,3 +29,8 @@ logging:
         jdbc:
           batch_size: 100  #IDENTITY主键策略 插入时不支持batch
     open-in-view: false
+logging:
+  level:
+    root: info
+    xmg.client.handler.ClientHandler: debug
+    xmg.client.handler.RpcFuture: debug
