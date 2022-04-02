@@ -16,6 +16,23 @@ spring:
         enabled: false
   application:
     name: provider
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        #打开hibernate统计信息
+        generate_statistics: false
+        #自动建表
+        hbm2ddl.auto: update
+        #格式化sql
+        format_sql: true
+        #数据库方言
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        max_fetch_depth: 1
+        jdbc:
+          batch_size: 100  #IDENTITY主键策略 插入时不支持batch
+    open-in-view: false
 logging:
   level:
     root: info

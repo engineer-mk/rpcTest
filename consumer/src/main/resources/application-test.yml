@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.10.10.10:8848
+        namespace: f4bbeda2-8c63-4927-88ee-590c56ccbda8
+        enabled: true
+  datasource:
+    url: jdbc:mysql://10.10.10.10:3306/rpc-test-consumer?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: root
