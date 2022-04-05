@@ -6,6 +6,7 @@ import com.xmg.repository.ProductRepository;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
@@ -18,12 +19,10 @@ import javax.persistence.EntityManager;
 public class OrderService {
     private final ProductRepository productRepository;
     private final EntityManager entityManager;
-    private final ProductApi productApi;
 
-    @GlobalTransactional
+    @Transactional
     public void placeOrder(Long productId,Long count){
         final ProductOrder order = new ProductOrder();
-        productApi.reduceCount(productId, count);
         order.setProductId(productId);
         entityManager.persist(order);
     }

@@ -6,6 +6,7 @@ rpc:
     token: fightTigersTonight
   client:
     remote-api-packages: "com.xmg.remoteApi."
+    token: fightTigersTonight
 spring:
   profiles:
     active: test1
