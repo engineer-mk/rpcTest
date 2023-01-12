@@ -1,0 +1,19 @@
+server:
+  port: 8006
+rpc:
+  server:
+    port: 7006
+spring:
+  profiles:
+    active:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.10:8848
+        enabled: false
+  application:
+    name: provider2
+logging:
+  level:
+    root: info
+    xmg.server.handler.ServerHandler: debug
