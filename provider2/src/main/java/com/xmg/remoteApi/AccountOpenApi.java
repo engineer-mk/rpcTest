@@ -26,7 +26,7 @@ public class AccountOpenApi {
     public void deductBalance(Long accountId, Double amount) {
         accountOpenApi.doDeductBalance(accountId, amount);
         try {
-            Thread.sleep(60000);
+            Thread.sleep(20000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

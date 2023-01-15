@@ -3,7 +3,6 @@ package com.xmg.remoteApi;
 import com.xmg.entity.Product;
 import com.xmg.repository.ProductRepository;
 import io.seata.core.context.RootContext;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -29,10 +28,10 @@ public class ProductApi {
     private  EntityManager entityManager;
     @Autowired
     @Lazy
-    private  ProductApi ProductApi;
+    private  ProductApi productApi;
 
     public void  reduceCount(Long id, Long count){
-        ProductApi.doReduceCount(id, count);
+        productApi.doReduceCount(id, count);
         accountApi.deductBalance(1L, 10d * count);
     }
 

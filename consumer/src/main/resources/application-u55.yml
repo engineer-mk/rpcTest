@@ -9,14 +9,3 @@ spring:
     url: jdbc:mysql://192.168.0.10:3306/rpc-test-consumer?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false
     username: root
     password: 1234
-
-seata:
-  enabled: true
-  application-id: ${spring.application.name}
-  tx-service-group: mall_tx_group
-  service:
-    vgroupMapping:
-      mall_tx_group: default
-      application-id: seata-server
-    grouplist:
-      default: 192.168.0.10:8091

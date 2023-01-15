@@ -18,10 +18,10 @@ rpc:
 seata:
   enabled: true
   application-id: ${spring.application.name}
-  tx-service-group: mall_tx_group
+  tx-service-group: my_test_group
   service:
     vgroupMapping:
-      mall_tx_group: default
+      my_test_group: default
       application-id: seata-server
     grouplist:
       default: 192.168.0.10:8091
