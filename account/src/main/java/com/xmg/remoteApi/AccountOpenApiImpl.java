@@ -25,13 +25,12 @@ public class AccountOpenApiImpl implements AccountOpenApi {
     private AccountOpenApiImpl accountOpenApi;
 
     public void deductBalance(Long accountId, Double amount) {
-        accountOpenApi.doDeductBalance(accountId, amount);
         try {
-            Thread.sleep(20000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        int i = 10 / 0;
+        accountOpenApi.doDeductBalance(accountId, amount);
     }
 
     @Transactional
@@ -40,11 +39,5 @@ public class AccountOpenApiImpl implements AccountOpenApi {
         Assert.state(account.getBalance() >= amount, "余额不足");
         account.setBalance(account.getBalance() - amount);
         entityManager.merge(account);
-        try {
-            Thread.sleep(30000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        int i = 10 / 0;
     }
 }

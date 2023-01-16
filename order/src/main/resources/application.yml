@@ -1,16 +1,14 @@
 server:
-  port: 8002
+  port: 8000
 rpc:
-  server:
-    port: 7002
-    token: fightTigersTonight
   client:
     remote-api-packages: "com.xmg.remoteApi."
+    token: fightTigersTonight
 spring:
   profiles:
     active: u55
   datasource:
-    url: jdbc:mysql://${host}:3306/rpc-test-account?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://${host}:3306/rpc-test-order?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false
     username: root
     password: 1234
   cloud:
@@ -21,7 +19,7 @@ spring:
         username: nacos
         password: laosijiddd
   application:
-    name: account
+    name: order
   jpa:
     show-sql: false
     properties:
@@ -42,7 +40,6 @@ spring:
 logging:
   level:
     root: info
-    xmg.server.handler.ServerHandler: debug
     xmg.client.handler.ClientHandler: debug
     xmg.client.handler.RpcFuture: debug
 seata:
@@ -67,3 +64,14 @@ seata:
       group : DEFAULT_GROUP
       username: nacos
       password: laosijiddd
+
+#seata:
+#  enabled: true
+#  application-id: ${spring.application.name}
+#  tx-service-group: my_test_group
+#  service:
+#    vgroupMapping:
+#      my_test_group: default
+#      application-id: seata-server
+#    grouplist:
+#      default: test:8091
