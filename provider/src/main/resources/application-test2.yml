@@ -1,5 +1,0 @@
-server:
-  port: 8002
-rpc:
-  server:
-    port: 7002

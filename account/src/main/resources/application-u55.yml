@@ -1,0 +1,44 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: test:8848
+        enabled: true
+        username: nacos
+        password: laosijiddd
+  datasource:
+    url: jdbc:mysql://test:3306/rpc-test-account?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 1234
+server:
+  port: 8002
+rpc:
+  server:
+    port: 7002
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: my_test_group
+  service:
+    vgroupMapping:
+      my_test_group: default
+      application-id: seata-server
+  config:
+    type: nacos
+    nacos:
+      server-addr: test:8848
+      group : DEFAULT_GROUP
+      namespace:
+      username: nacos
+      password: laosijiddd
+
+#seata:
+#  enabled: true
+#  application-id: ${spring.application.name}
+#  tx-service-group: my_test_group
+#  service:
+#    vgroupMapping:
+#      my_test_group: default
+#      application-id: seata-server
+#    grouplist:
+#      default: test:8091
